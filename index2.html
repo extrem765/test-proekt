@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compayible"content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>goodjob</title>
+   
+    
+
+    <link rel="stylesheet"href="static/styles/pages2.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+
+</head>
+<body>
+   
+    <!-- Header 1-->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+           <a href="#home">
+          <img src="static/fonts/богданбуд.png" alt="Логотип БогданБуд" />
+         </a>
+         </div>
+            
+
+
+
+            <div class="header-info">
+                <a href="tel:+380960080505" class="phone">+380502265978</a>
+                <nav class="nav">
+                   <a href="proekt 11111.html" class="active">Головна</a>
+                    <a href="index1.html" class="active">Послуги</a>
+                    <a href="index2.html" class="active" >Наші роботи</a>
+                     <a href="#contact">Контакти</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+
+
+
+ <!-- Header 1-->
+<section title="about" id="about">
+    <div class="content">
+        <div  class="about-text">
+
+         <h1>Наші робти</h1>
+           
+            
+
+        </div>
+
+
+
+
+     </div>
+           
+</section>
+<div class="gallery-container">
+        <div class="gallery-grid" id="galleryGrid">
+            <!-- Images will be loaded here dynamically -->
+        </div>
+        
+        <div class="pagination" id="pagination">
+            <button class="navigation-btn" onclick="goToFirst()">⟪</button>
+            <button class="navigation-btn" onclick="goToPrevious()">⟨</button>
+            <button class="active" onclick="goToPage(1)">1</button>
+            <button onclick="goToPage(2)">2</button>
+            <button onclick="goToPage(3)">3</button>
+            <button onclick="goToPage(4)">4</button>
+            <button onclick="goToPage(5)">5</button>
+            <button class="navigation-btn" onclick="goToNext()">⟩</button>
+            <button class="navigation-btn" onclick="goToLast()">⟫</button>
+        </div>
+    </div>
+    
+    <!-- Modal for image preview -->
+    <div class="modal" id="imageModal">
+        <span class="modal-close" onclick="closeModal()">&times;</span>
+        <div class="modal-nav modal-prev" onclick="prevImage()">&#8249;</div>
+        <div class="modal-nav modal-next" onclick="nextImage()">&#8250;</div>
+        <div class="modal-content">
+            <img id="modalImg" src="" alt="">
+        </div>
+    </div>
+ <!-- заявка на ремонт -->
+ <section class="form-section">
+        <div class="container">
+            
+                 
+            
+            
+            <div class="form-section-content">
+                <h2 class="form-title">Залиште заявку на ремонт чи будівництво</h2>
+                
+                <form id="constructionForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="name">Ім'я</label>
+                            <input type="text" id="name" name="name" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="phone">Мобільний *</label>
+                            <input type="tel" id="phone" name="phone" class="form-input" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="message">Повідомлення</label>
+                        <textarea id="message" name="message" class="form-input form-textarea" placeholder="Розкажіть про ваш проект..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Надіслати</button>
+                </form>
+            </div>
+        </div>
+
+ </section>
+<!-- Contact Section 5-->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Зв'яжіться з нами</h2>
+            <p>Готові відповісти на всі ваші запитання та надати безкоштовну консультацію</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📞</span>
+                    <span>(050) 226-59-78</span>
+                </div>
+                <div class="contact-item">
+                    <span>📧</span>
+                    <span>bojkiv1989@gmai.com</span>
+                </div>
+                <div class="contact-item">
+                    <span>📍</span>
+                    <span>м. Івано-Франківськ</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer 6-->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 БОГДАНБУД. Всі права захищені.</p>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+        // Sample house images data
+        const houseImages = [
+            'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400&h=400&fit=crop',
+            'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=400&h=400&fit=crop',
+            'https://images.unsplash.com/photo-1558618047-dd97cd72a6af?w=400&h=400&fit=crop',
+            'https://images.unsplash.com/photo-1572120360610-d971b9d7767c?w=400&h=400&fit=crop',
+            'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=400&fit=crop',
+            'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=400&h=400&fit=crop',
+            'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=400&h=400&fit=crop',
+            'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400&h=400&fit=crop',
+            'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&h=400&fit=crop',
+            'https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?w=400&h=400&fit=crop',
+            'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=400&h=400&fit=crop',
+            'https://images.unsplash.com/photo-1600607688960-e095ba4dc4cf?w=400&h=400&fit=crop',
+            'https://images.unsplash.com/photo-1600607688969-a5bfcd646154?w=400&h=400&fit=crop',
+            'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=400&h=400&fit=crop',
+            'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=400&h=400&fit=crop',
+            'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=400&h=400&fit=crop'
+        ];
+        
+        let currentPage = 1;
+        const totalPages = 5;
+        let currentModalIndex = 0;
+        let currentPageImages = [];
+        
+        function loadGallery(page = 1) {
+            const galleryGrid = document.getElementById('galleryGrid');
+            galleryGrid.innerHTML = '';
+            currentPageImages = []; // Reset current page images
+            
+            // Load 16 images (4x4 grid)
+            for (let i = 0; i < 16; i++) {
+                const galleryItem = document.createElement('div');
+                galleryItem.className = 'gallery-item';
+                
+                const img = document.createElement('img');
+                const imageIndex = (page - 1) * 16 + i;
+                img.src = houseImages[imageIndex % houseImages.length];
+                img.alt = `Будинок ${i + 1}`;
+                img.loading = 'lazy';
+                
+                // Store image info for modal
+                currentPageImages.push({
+                    src: img.src,
+                    alt: img.alt
+                });
+                
+                // Add click event for modal
+                galleryItem.addEventListener('click', () => openModal(i));
+                
+                galleryItem.appendChild(img);
+                galleryGrid.appendChild(galleryItem);
+            }
+        }
+        
+        function updatePagination(page) {
+            const paginationButtons = document.querySelectorAll('.pagination button');
+            paginationButtons.forEach((btn, index) => {
+                btn.classList.remove('active');
+                
+                // Update navigation buttons state
+                if (index === 0 || index === 1) { // First and Previous
+                    btn.disabled = page === 1;
+                } else if (index === paginationButtons.length - 2 || index === paginationButtons.length - 1) { // Next and Last
+                    btn.disabled = page === totalPages;
+                }
+            });
+            
+            // Set active page
+            const pageButtons = document.querySelectorAll('.pagination button:not(.navigation-btn)');
+            if (pageButtons[page - 1]) {
+                pageButtons[page - 1].classList.add('active');
+            }
+        }
+        
+        function goToPage(page) {
+            currentPage = page;
+            loadGallery(page);
+            updatePagination(page);
+        }
+        
+        function goToFirst() {
+            goToPage(1);
+        }
+        
+        function goToPrevious() {
+            if (currentPage > 1) {
+                goToPage(currentPage - 1);
+            }
+        }
+        
+        function goToNext() {
+            if (currentPage < totalPages) {
+                goToPage(currentPage + 1);
+            }
+        }
+        
+        function goToLast() {
+            goToPage(totalPages);
+        }
+        
+        // Modal functions
+        function openModal(imageIndex) {
+            currentModalIndex = imageIndex;
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImg');
+            
+            modalImg.src = currentPageImages[imageIndex].src;
+            modalImg.alt = currentPageImages[imageIndex].alt;
+            
+            modal.classList.add('show');
+            document.body.style.overflow = 'hidden'; // Prevent body scroll
+        }
+        
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.remove('show');
+            document.body.style.overflow = 'auto'; // Restore body scroll
+        }
+        
+        function prevImage() {
+            currentModalIndex = (currentModalIndex - 1 + currentPageImages.length) % currentPageImages.length;
+            const modalImg = document.getElementById('modalImg');
+            modalImg.src = currentPageImages[currentModalIndex].src;
+            modalImg.alt = currentPageImages[currentModalIndex].alt;
+        }
+        
+        function nextImage() {
+            currentModalIndex = (currentModalIndex + 1) % currentPageImages.length;
+            const modalImg = document.getElementById('modalImg');
+            modalImg.src = currentPageImages[currentModalIndex].src;
+            modalImg.alt = currentPageImages[currentModalIndex].alt;
+        }
+        
+        // Keyboard navigation for modal
+        document.addEventListener('keydown', function(e) {
+            const modal = document.getElementById('imageModal');
+            if (modal.classList.contains('show')) {
+                if (e.key === 'Escape') {
+                    closeModal();
+                } else if (e.key === 'ArrowLeft') {
+                    prevImage();
+                } else if (e.key === 'ArrowRight') {
+                    nextImage();
+                }
+            }
+        });
+        
+        // Close modal when clicking outside the image
+        document.getElementById('imageModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+        
+        // Initialize gallery
+        loadGallery(1);
+        updatePagination(1);
+    </script>
